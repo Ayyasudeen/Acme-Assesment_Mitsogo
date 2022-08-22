@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="#" class="logo">ACME</a>
+    <a href="#"><span><img width="30px" src="./assets/home-icon2.png" alt="homeicon"></span>Home</a>
+    <a class="active" href="#"><span><img width="30px" src="./assets/bar-chart2.png" alt="baricon"></span>Dashboard</a>
+    <a href="#"><span><img width="30px" src="./assets/down-chevron1.png" alt="inboxicon"></span>Inbox<span
+        class="inbox-span">New</span></a>
+    <a href="#"><span><img width="30px" src="./assets/products-icon.PNG" alt="productsicon"></span>Products</a>
+    <a href="#"><span><img width="30px" src="./assets/admin-icon.PNG" alt="adminicon"></span>Admin</a>
+  </div>
+
+  <div id="main">
+    <div class="nav">
+      <div class="nav-items">
+        <div class="left-nav-items">
+          <div class="hamburger-menu" onclick="openNav()">
+            <div class="m-line"></div>
+            <div class="m-line"></div>
+            <div class="m-line m-line3"></div>
+          </div>
+          <div class="search-section">
+            <img width="30px" height="30px" src="./assets/search-icon.PNG" alt="">
+            <p>Search transactions, invoices or help</p>
+          </div>
+        </div>
+        <div class="right-nav-items">
+          <img width="35px" height="35px" class="search-icon" src="./assets/search-icon.PNG" alt="">
+          <div class="notification-icon dropdown1" onmouseover="hoverFuncNotif()" onmouseout="hoverOutNotif()">
+            <img width="30px" src="./assets/notification-icon.png" alt="notification-icon">
+            <span class="notif-circle"></span>
+            <div class="dropdown-content1">
+              <ul class="users-list">
+                <li class="user">
+                  <div>
+                    <img src="./assets/profile-pic-03.jpg" width="40px" height="40px" alt="">
+                    <div>
+                      <h4>Bavid Kames</h4>
+                      <p>Assigned you on the call with Sara</p>
+                    </div>
+                  </div>
+                  <p>2 min ago</p>
+                </li>
+                <li class="user">
+                  <div>
+                    <img src="./assets/profile-pic-06.jpg" width="40px" height="40px" alt="">
+                    <div>
+                      <h4>Alexa Mary</h4>
+                      <p>Marked the task <span style="color:#3B86FF">New UI</span> as done</p>
+                    </div>
+                  </div>
+                  <p>5 min ago</p>
+                </li>
+                <li class="user">
+                  <div>
+                    <img src="./assets/profile-pic-05.jpg" width="40px" height="40px" alt="">
+                    <div>
+                      <h4>Eva Maria</h4>
+                      <p>Added a new comment on sales task</p>
+                    </div>
+                  </div>
+                  <p>10 min ago</p>
+                </li>
+                <p class="notif-showmore">Show More</p>
+
+              </ul>
+            </div>
+          </div>
+          <div class="profile-name" onmouseover="hoverFunc()" onmouseout="hoverOut()">
+            <p>John Doe</p>
+            <img width="25px" class="down-arrow" height="25px" src="./assets/down-arrow.png" alt="down-arrow">
+          </div>
+          <div class="profile-icon dropdown" onmouseover="hoverFunc()" onmouseout="hoverOut()">
+            <img width="35px" src="./assets/profile-pic-01.jpg" alt="profile-icon">
+            <div class="dropdown-content">
+              <a href="#"><span><img width="30px" src="./assets/my-profile.PNG" alt=""></span>My Profile</a>
+              <a href="#"><span><img width="30px" src="./assets/billing.PNG" alt=""></span>Billing</a>
+              <a href="#"><span><img width="30px" src="./assets/logout.PNG" alt=""></span>Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-view">
+      <div class="overview-sec">
+        <h2>Overview</h2>
+        <button class="fund-btn">Add Funds <span>+</span></button>
+      </div>
+      <div class="grid-container">
+        <div class="item1">
+          <div>
+            <h3>Statistics</h3>
+            <div>
+              <p>Last 6 months</p>
+              <img width="12px" height="12px" src="./assets/down-arrow.png" alt="">
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+        <div class="item2">
+          <h3>Sales Distribution</h3>
+          <div class="chart-container">
+            <canvas id="myChart1"></canvas>
+            <p>230,900
+              <br>
+              Sales
+            </p>
+          </div>
+        </div>
+        <div class="item4">
+          <div>
+            <div class="profile-pic">
+              <img src="./assets/profile-pic-01.jpg" width="96px" alt="profile-pic">
+              <span>&#128397;</span>
+            </div>
+            <h4>Nick Herasimenka</h4>
+            <p>United States</p>
+            <div class="social-icons">
+              <i class="fa fa-twitter"></i>
+              <i class="fa fa-facebook-official"></i>
+              <i class="fa fa-linkedin-square"></i>
+              <i class="fa fa-whatsapp"></i>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3>Our Users</h3>
+              <button class="dot-menu">&#x2807;</button>
+            </div>
+            <ul class="users-list">
+              <li class="user">
+                <div>
+                  <img src="./assets/profile-pic-03.jpg" width="40px" height="40px" alt="">
+                  <div>
+                    <h4>Drew James</h4>
+                    <p>United States</p>
+                  </div>
+                </div>
+                <p>Mobile: 8715674877</p>
+              </li>
+              <li class="user">
+                <div>
+                  <img src="./assets/profile-pic-02.jpg" width="40px" height="40px" alt="">
+                  <div>
+                    <h4>Bavid Kames</h4>
+                    <p>United States</p>
+                  </div>
+                </div>
+                <p>Mobile: 8715674877</p>
+              </li>
+              <li class="user">
+                <div>
+                  <img src="./assets/profile-pic-04.jpg" width="40px" height="40px" alt="">
+                  <div>
+                    <h4>Lavid Emes</h4>
+                    <p>United States</p>
+                  </div>
+                </div>
+                <p>Mobile: 8715674877</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item3">
+          <h3>Referrer</h3>
+
+          <table>
+            <tr>
+              <th>Location</th>
+              <th>Views</th>
+              <th>Sales</th>
+              <th>Conversion</th>
+              <th>Total</th>
+            </tr>
+            <tr>
+              <td>google.com</td>
+              <td>3746</td>
+              <td>752</td>
+              <td>43%</td>
+              <td>$19,291</td>
+            </tr>
+            <tr>
+              <td>facebook.com</td>
+              <td>8126</td>
+              <td>728</td>
+              <td>32%</td>
+              <td>$17,638</td>
+            </tr>
+            <tr>
+              <td>twitter.com</td>
+              <td>8836</td>
+              <td>694</td>
+              <td>28%</td>
+              <td>$16,218</td>
+            </tr>
+            <tr>
+              <td>Direct,email,IM</td>
+              <td>1173</td>
+              <td>645</td>
+              <td>24%</td>
+              <td>$14,2421</td>
+            </tr>
+            <tr>
+              <td>linkedin.com</td>
+              <td>2739</td>
+              <td>539</td>
+              <td>20%</td>
+              <td>$12,370</td>
+            </tr>
+            <tr>
+              <td>instagram.com</td>
+              <td>2739</td>
+              <td>539</td>
+              <td>20%</td>
+              <td>$12,370</td>
+            </tr>
+            <tr>
+              <td><a href="#">Show More</a></td>
+            </tr>
+          </table>
+        </div>
+        <div class="item5">
+          <div>
+            <h3>Product Video</h3>
+            <button class="dot-menu">&#x2807;</button>
+          </div>
+          <div class="video-section">
+            <span class="ripple"><i class="fa fa-play-circle"></i></span>
+            <video poster="./assets/video-thumbnail.PNG" controls>
+              <source src="./assets/product-video.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <script src="./script.js"></script>
+
+</body>
+
+</html>
