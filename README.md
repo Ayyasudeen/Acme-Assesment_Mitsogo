@@ -1,4 +1,4 @@
-# Responsive Dashboard
+# Responsive Dashboard UI
 
 ## Technologies used: HTML, CSS, JS 
 
