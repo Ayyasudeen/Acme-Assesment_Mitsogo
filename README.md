@@ -1,4 +1,4 @@
-# Dashboard developed by me
+# Responsive Dashboard
 
 ## Technologies used: HTML, CSS, JS \
 
